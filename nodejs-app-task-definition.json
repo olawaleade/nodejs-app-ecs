@@ -1,10 +1,12 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:739242340272:task-definition/nodejs-app-task-definition:1",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:739242340272:task-definition/nodejs-app-task-definition:7",
     "containerDefinitions": [
         {
             "name": "nodejs-app",
             "image": "739242340272.dkr.ecr.us-east-1.amazonaws.com/nodejs-app",
-            "cpu": 0,
+            "cpu": 2048,
+            "memory": 3072,
+            "memoryReservation": 3072,
             "portMappings": [
                 {
                     "name": "nodejs-app-5000",
@@ -36,7 +38,7 @@
     "family": "nodejs-app-task-definition",
     "taskRoleArn": "arn:aws:iam::739242340272:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::739242340272:role/ecsTaskExecutionRole",
-    "revision": 1,
+    "revision": 7,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -51,6 +53,9 @@
         },
         {
             "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
         },
         {
             "name": "com.amazonaws.ecs.capability.task-iam-role"
@@ -72,13 +77,13 @@
     "requiresCompatibilities": [
         "EC2"
     ],
-    "cpu": "1024",
-    "memory": "3072",
+    "cpu": "4096",
+    "memory": "8192",
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-04-02T06:07:46.017Z",
+    "registeredAt": "2024-04-02T07:31:21.243Z",
     "registeredBy": "arn:aws:iam::739242340272:user/olawale",
     "tags": []
 }
